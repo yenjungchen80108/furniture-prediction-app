@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<title>台北房間介紹</title>
+<meta name="keywords" content="台北,空間規劃,室內設計">
+<meta name="description" content="介紹台北的房間內部裝潢">
+<link rel="icon" href="{{ url_for('static', filename='images/iconA.ico') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+
+<body>
+<div id="wrap">
+<h1>台北 Room Tour</h1>
+<p id="lead">介紹台北的房間</p>
+<ul>
+<li><a href="#room">房間介紹</a>
+	<ul>
+	<li>化妝台</li>
+	<li>書桌</li>
+	<li>睡眠區</li>
+	</ul>
+</li>
+<li><a href="{{ url_for('book') }}">書籍介紹</a></li>
+<li><a href="{{ url_for('fill') }}">家具填寫</a></li>
+<li><a href="#author">作者資訊</a></li>
+</ul>
+
+<section id="room">
+<h2>房間不專業分享</h2>
+
+<section id="makeup" class="frame">
+<h3><span>★</span>化妝台<span class="furn makeupdesk">(makeup desk)</span><span>★</span></h3>
+<p>化妝桌是大二買的，可以收納成<strong>平面</strong>，適合收納。<br>桌面放滿化妝品等雜物。</p>
+<img src="{{url_for('static',filename='/images/a.jpg')}}" width="300" height="280" alt="makeup" class="ph">
+<dl class="data">
+<dt>外觀：</dt><dd>藍色長形附有兩個白色抽屜櫃。</dd>
+<dt>好用程度：</dt><dd>尚可，用久需要將螺絲鎖緊。</dd>
+</dl>
+</section>
+
+<section id="desk" class="frame">
+<h3><span>★</span>書桌<span class="furn desk">(desk)</span><span>★</span></h3>
+<p>房東附的黑色書桌雖然沒抽屜卻很好坐。<br>書桌放著資料夾及一堆書。</p>
+<img src="{{url_for('static',filename='/images/b.jpg')}}" width="300" height="280" alt="makeup" class="ph">
+<dl class="data">
+<dt>外觀：</dt><dd>黑色無抽屜，下方另買IKEA抽屜。</dd>
+<dt>好用程度：</dt><dd>不錯，因為黑色灰塵易見，需常擦拭。</dd>
+</dl>
+</section>
+
+<section id="sleep" class="frame">
+<h3><span>★</span>睡眠區<span class="furn sleepingplace">(sleeping place)</span><span>★</span></h3>
+<p>這個一天至少會待上7小時的區域要擺設地適合睡眠，<strong>薰香</strong>是個好選擇。</p>
+<img src="{{url_for('static',filename='/images/c.jpg')}}" width="320" height="280" alt="makeup" class="ph">
+<dl class="data">
+<dt>外觀：</dt><dd>使用藍色床單搭配綠色地墊營造藍天白雲風格。</dd>
+<dt>好用程度：</dt><dd>床有令人入睡地魔性，唯窗簾有時飛起旁人可透見。</dd>
+</dl>
+</section>
+</section>
+
+<section id="author">
+<h2>作者資訊</h2>
+<dl>
+<dt>暱稱：</dt><dd>emilyshasha</dd>
+<dt>mail①：</dt><dd>emily80108@gmail.com</dd>
+<dt>mail②：</dt><dd>yenjungc@smu.edu</dd>
+</dl>
+</section>
+
+<p><small>Copyright &copy;EMILYSHASHA All Rights Reserved.</small></p>
+</div>
+</body>
+
+</html>

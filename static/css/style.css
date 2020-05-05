@@ -1,0 +1,260 @@
+﻿@charset"utf-8";
+
+/*視窗底色*/
+body{
+/*
+background-color:#FFDDAA;
+background-image:url(back.jpg);
+background-repeat:repeat-x;
+*/
+background: #FFDDAA url(C:/Users/emily/Desktop/blog/static/images/back.jpg) repeat-x;
+}
+
+/*連結顏色*/
+a{
+color:#0000CC;
+font-family:Microsoft JhengHei;
+}
+a:hover{
+color:#A500CC;
+font-family:Microsoft JhengHei;
+}
+a:active{
+color:#C63300;
+font-family:Microsoft JhengHei;
+}
+
+li{
+font-family:Microsoft JhengHei;
+}
+
+
+/*頁面標題*/
+h1{
+color:#880000;
+text-align:center;
+font-size:250%;
+font-family:Microsoft JhengHei;
+}
+
+/*次標題設定*/
+h2{
+color:#000000;
+border:#FF44AA 1px dotted;
+border-left:#C10066 10px solid;
+padding:5px 20px;
+margin-bottom:0;
+font-family:Microsoft JhengHei;
+background-color:#FFFFFF
+}
+
+h3{
+color:#550088;
+font-family:Microsoft JhengHei;
+border-bottom:#008800 1px dotted;
+}
+
+h3 span{
+color:#FF5511
+}
+
+/*內容標題設定*/
+dt{
+clear:left;
+float:left;
+font-weight:bold;
+font-family:Microsoft JhengHei;
+}
+
+/*內文文字*/
+p{
+font-family:Microsoft JhengHei;
+}
+dd{
+font-family:Microsoft JhengHei;
+}
+
+/*引言區塊*/
+#lead{
+border-top:#E63F00 1px dotted;
+border-bottom:#E63F00 1px dotted;
+padding: 15px;
+text-align: center;
+font-size:16px
+}
+
+/*共通資料*/
+.furn{
+font-size: 80%
+font-weight: normal;
+}
+.makeupdesk{
+color:#C10066	
+}
+.desk{
+color:#A42D00
+}
+.sleepingplace{
+color:#003C9D
+}
+
+/*區塊邊框設定*/
+.frame{
+margin: 20px 0;
+padding: 35px 30px 300px 30px;
+background-image:url(C:/Users/emily/Desktop/blog/static/images/back2.gif);
+background-repeat:no-repeat;
+background-color:#FFFFBB;
+}
+/*表格區塊邊框設定*/
+.frame2{
+margin: 20px 0;
+padding: 70px 30px 20px 30px;
+background-image:url(C:/Users/emily/Desktop/blog/static/images/back2.gif);
+background-repeat:no-repeat;
+background-color:#FFFFBB;
+}
+/*內容整體外框設定*/
+#wrap{
+width: 960px;
+margin: 40px auto;
+padding:40px 80px;
+border:#FF0000 3px solid;
+background-color: #fff;
+}
+/*照片及特徵區塊設定*/
+.ph{
+float:left;
+margin-right:30px;
+}
+.data
+{
+float:left;
+width:388px;
+back-ground:#f00;
+}
+
+
+/*表格設定*/
+
+table.entryForm{
+  width:100%;
+  border:#FF0088 2px solid;
+  border-collapse:collapse;
+font-family:Microsoft JhengHei;
+}
+
+.entryForm th,
+.entryForm td{
+  padding: 5px 10px;
+  border: #FF0000 1px solid;
+font-family:Microsoft JhengHei;
+}
+
+.entryForm th{
+  width:10em;
+  background-color:#FFDDAA;
+  text-align:left;
+  vertical-align:top;
+font-family:Microsoft JhengHei;
+}
+
+/*輸入表單設定*/
+.entryForm textarea{
+width: 600px;
+height: 100px;
+padding: 5px;
+border: #CCC 1px solid;
+font-family:Microsoft JhengHei;
+}
+.entryForm input[type="text"],
+.entryForm input[type="email"]{
+width: 400px;
+padding: 5px;
+border: #CCC 1px solid;
+font-family:Microsoft JhengHei;
+}
+
+.entryForm input:focus,
+.entryForm textarea: focus{
+back-ground-color: #ffffee;
+font-family:Microsoft JhengHei;
+}
+label,
+input[type="radio"],
+input[type="checkbox"],
+input[type="reset"],
+input[type="submit"]{
+ cursor: pointer;
+}
+/*按鈕設定*/
+.btns{
+margin: 30px;
+text-align: center;
+}
+
+/*
+.btns input{
+width: 100px;
+}
+*/
+/*按鈕基本樣式*/
+.btn{
+width: 100px;
+margin:0 10px;
+padding: 10px;
+border: none;
+font-size: 16px;
+font-family:Microsoft JhengHei;
+}
+.btn-large { 
+padding: 9px 14px; 
+font-size: 15px; 
+line-height: normal; 
+-webkit-border-radius: 5px; 
+-moz-border-radius: 5px; 
+border-radius: 5px; }
+.btn-primary, .btn-primary:hover{ 
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); 
+color: #ffffff;
+}
+.btn-primary.active{
+color: rgba(255, 255, 255, 0.75);
+}
+.btn-primary{ 
+background-color: #4a77d4; 
+background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); 
+background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); 
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); 
+background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); 
+background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); 
+background-image: linear-gradient(top, #6eb6de, #4a77d4); 
+background-repeat: repeat-x; 
+filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  
+border: 1px solid #3762bc; 
+text-shadow: 1px 1px 1px rgba(0,0,0,0.4); 
+box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+filter: none; background-color: #4a77d4;
+}
+.btn-block{ 
+width: 100%;
+display:block;
+}
+/*滑鼠一道按鈕時*/
+.btn:hover{
+opacity: 0.7;
+}
+/*按下按鈕的瞬間*/
+.btn: active{
+color: 	#FF8888;
+}
+/*一按鈕功能區分顏色*/
+.btn-clear{
+background-color: #FFDD55;
+}
+.btn-send{
+background-color:#FFB7DD;
+}
+

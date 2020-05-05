@@ -1,0 +1,159 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IKEA家具價值估估看</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+<link rel="icon" href="{{ url_for('static', filename='images/iconB.ico') }}">
+<script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+<!--<script type="text/javascript" src="{{ url_for('static', filename="js/script.js") }}"></script>-->
+</head>
+
+<body>
+<div id="wrap">
+<h1>IKEA 家具價值估估看</h1>
+<p id="lead">買入賣出家具不吃虧</p>
+<ul>
+<li><a href="{{ url_for('room')}}">房間介紹</a></li>
+<li><a href="{{ url_for('book')}}">書籍介紹</a></li>
+<li><a href="#fur">家具填寫</a></li>
+<li><a href="#author">作者資訊</a></li>
+</ul>
+
+<section id="fur">
+<h2>填寫家中一樣家具</h2>
+<section id="furn" class="frame2">
+
+<div class="login">
+
+<!-- Main Input For Receiving Query to our ML -->
+<form action="{{ url_for('predict')}}"method="post">
+<table class="entryForm">
+
+<tr>
+<th>類別(Category)：</th>
+<td>
+<select id="category" name="category">
+<option value="0">Bar furniture</option>
+<option value="1">Beds</option>
+<option value="2">Bookcases & shelving units</option>
+<option value="3">Cabinets & cupboards</option>
+<option value="4">CafÃ© furniture</option>
+<option value="5">Chairs</option>
+<option value="6">Chests of drawers & drawer units</option>
+<option value="7">Children's furniture</option>
+<option value="8">Nursery furniture</option>
+<option value="9">Outdoor furniture</option>
+<option value="10">Room dividers</option>
+<option value="11">Sideboards, buffets & console tables</option>
+<option value="12">Sofas & armchairs</option>
+<option value="13">Tables & desks</option>
+<option value="14">Trolleys</option>
+<option value="15">TV & media furniture</option>
+<option value="16">Wardrobes</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<th>是否有在線上銷售(Sellable Online)：</th>
+<td>
+<input type="radio" name="sellable_online" value="1" checked>有(Yes)
+<input type="radio" name="sellable_online" value="0">沒有(No)
+</td>
+</tr>
+
+<tr>
+<th>是否有其他顏色(Other color)：</th>
+<td>
+<input type="radio" name="other_colors" value="1" checked>有(Yes)
+<input type="radio" name="other_colors" value="0">沒有(No)
+</td>
+</tr>
+
+<tr>
+<th>深度(Depth)：</th>
+<td><input type="text" name="depth" placeholder="Depth cm" required="required" />
+</tr>
+
+<tr>
+<th>長度(Length)：</th>
+<td><input type="text" name="height" placeholder="Height cm" required="required" />
+</tr>
+
+<tr>
+<th>寬度(Width)：</th>
+<td><input type="text" name="width" placeholder="Width cm" required="required" />
+</tr>
+
+</table>
+<div class="btns">
+<button type="reset" class="btn btn-clear">清除重填</button>
+<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</div>
+</form>
+
+</section>
+</section>
+
+<section id="author">
+<h2>作者資訊</h2>
+<dl>
+<dt>暱稱：</dt><dd>emilyshasha</dd>
+<dt>mail①：</dt><dd>emily80108@gmail.com</dd>
+<dt>mail②：</dt><dd>yenjungc@smu.edu</dd>
+</dl>
+</section>
+
+<p><small>Copyright &copy;EMILYSHASHA All Rights Reserved.</small></p>
+<br>
+<br>
+{{prediction_text}}
+</div>
+</body>
+<script>
+$( document ).ready(function() {
+$( "#category" ).change(function() {
+
+  var itm = $("select option:selected" ).val()
+  if (itm == "0"){
+	  document.body.style.backgroundImage = "url('/images/bar.jpg')";
+ } else  if (itm == "1"){
+	  document.body.style.backgroundImage = "url('/images/bed.png')";
+ } else  if (itm == "2"){
+	  document.body.style.backgroundImage = "url('/images/bookcase.jpg')";
+ } else  if (itm == "3"){
+      document.body.style.backgroundImage = "url('/images/cabinet.png')";
+ } else  if (itm == "4"){
+      document.body.style.backgroundImage = "url('/images/cafe.png')";
+ } else  if (itm == "5"){
+      document.body.style.backgroundImage = "url('/images/chair.png')";
+ } else  if (itm == "6"){
+      document.body.style.backgroundImage = "url('/images/drawer.jpg')";
+ } else  if (itm == "7"){
+      document.body.style.backgroundImage = "url('/images/children.jpg')";
+ } else  if (itm == "8"){
+      document.body.style.backgroundImage = "url('/images/nursery.jpg')";
+ } else  if (itm == "9"){
+      document.body.style.backgroundImage = "url('/images/outdoor.png')";
+ } else  if (itm == "10"){
+      document.body.style.backgroundImage = "url('/images/roomdivider.png')";
+ } else  if (itm == "11"){
+      document.body.style.backgroundImage = "url('/images/sideboard.jpg')";
+ } else  if (itm == "12"){
+      document.body.style.backgroundImage = "url('/images/armchair.png')";
+ } else  if (itm == "13"){
+      document.body.style.backgroundImage = "url('/images/table.png')";
+ } else  if (itm == "14"){
+      document.body.style.backgroundImage = "url('/images/trolley.png')";
+ } else  if (itm == "15"){
+      document.body.style.backgroundImage = "url('/images/tv.png')";
+ } else  if (itm == "16"){
+      document.body.style.backgroundImage = "url('/images/wardrobe.jpg')";
+ } else {
+   document.body.style.backgroundColor = "#FFDDAA";
+ }
+});
+});
+</script>
+</html>
