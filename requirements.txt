@@ -6,6 +6,6 @@ requests==1.2.0
 Werkzeug==1.0.1
 gunicorn==19.6.0
 pandas==0.22.0
-numpy==1.11.2
+numpy==1.21.0
 scipy==0.18.1
 scikit-learn>=0.18
